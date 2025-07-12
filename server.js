@@ -51,7 +51,7 @@ app.all('/chat', async (req, res) => {
     res.json({ 
       reply: response.content[0].text,
       metadata: {
-        model: "claude-3-sonnet",
+        model: "claude-3-5-sonnet-20241022",
         timestamp: new Date().toISOString()
       }
     });
