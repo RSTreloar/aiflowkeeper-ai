@@ -43,7 +43,7 @@ app.all('/chat', async (req, res) => {
     const message = req.body.message || "Hello, how can I help you?";
     
     const response = await anthropic.messages.create({
-      model: "claude-3-5-sonnet-20241022",
+      model: "claude-3-5-sonnet-20240620",
       max_tokens: 1000,
       messages: [{ role: "user", content: message }]
     });
@@ -51,7 +51,7 @@ app.all('/chat', async (req, res) => {
     res.json({ 
       reply: response.content[0].text,
       metadata: {
-        model: "claude-3-5-sonnet-20241022",
+        model: "claude-3-5-sonnet-20240620",
         timestamp: new Date().toISOString()
       }
     });
